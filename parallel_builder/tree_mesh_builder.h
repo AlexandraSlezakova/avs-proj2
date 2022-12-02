@@ -22,7 +22,10 @@ protected:
     unsigned marchCubes(const ParametricScalarField &field);
     float evaluateFieldAt(const Vec3_t<float> &pos, const ParametricScalarField &field);
     void emitTriangle(const Triangle_t &triangle);
-    const Triangle_t *getTrianglesArray() const { return nullptr; }
+    const Triangle_t *getTrianglesArray() const { return mTriangles.data(); }
+    unsigned decomposeTree(const Vec3_t<float> &pos, const ParametricScalarField &field, const unsigned &gridSize);
+
+    std::vector<Triangle_t> mTriangles; ///< Temporary array of triangles
 };
 
 #endif // TREE_MESH_BUILDER_H
