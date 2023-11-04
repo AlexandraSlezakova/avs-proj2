@@ -1,1 +1,1 @@
-# avs-proj2
+# Computation Systems Architectures Project 2
